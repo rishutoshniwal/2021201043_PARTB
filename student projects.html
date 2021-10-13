@@ -23,7 +23,19 @@ Licence URI: http://www.os-templates.com/template-terms
 @media screen and (min-width:180px) and (max-width:900px) {
 	.container .group div{margin-bottom:0;}
 }
-</style>
+<script>
+function addRemoveAttr(){
+ var contenteditable = document.getElementById('top').contentEditable;
+ 
+ if(contenteditable == 'inherit' || contenteditable == 'false'){
+   document.getElementById('ea').innerHTML="Leave admin mode";
+  document.getElementById('top').contentEditable = true;
+ }else{
+  document.getElementById('ea').innerHTML="Enter admin mode";
+  document.getElementById('top').contentEditable = false;
+ }
+}
+</script>
 </head>
 <body id="top">
 <!-- ################################################################################################ --> 
@@ -33,10 +45,12 @@ Licence URI: http://www.os-templates.com/template-terms
   <div id="topbar" class="clear"> 
     <!-- ################################################################################################ -->
     <nav>
+	
       <ul>
         
         
-        <li><a href="#">Admin Login</a></li>
+        <li><button onclick='addRemoveAttr();' id="ea">Enter Admin Mode</button></li>
+		
       </ul>
     </nav>
     <!-- ################################################################################################ --> 

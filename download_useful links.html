@@ -8,13 +8,26 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>Downloads / Useful Links</title>
+<title>Download / Useful Links</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <script src="jquery-3.5.1.min.js"></script>
 
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link href="layout/styles/meraCSS.css" rel="stylesheet" type="text/css" media="all">
+<script>
+function addRemoveAttr(){
+ var contenteditable = document.getElementById('top').contentEditable;
+ 
+ if(contenteditable == 'inherit' || contenteditable == 'false'){
+   document.getElementById('ea').innerHTML="Leave admin mode";
+  document.getElementById('top').contentEditable = true;
+ }else{
+  document.getElementById('ea').innerHTML="Enter admin mode";
+  document.getElementById('top').contentEditable = false;
+ }
+}
+</script>
 </head>
 <body id="top">
 <!-- ################################################################################################ --> 
@@ -24,10 +37,12 @@ Licence URI: http://www.os-templates.com/template-terms
   <div id="topbar" class="clear"> 
     <!-- ################################################################################################ -->
     <nav>
+	
       <ul>
         
         
-        <li><a href="#">Admin Login</a></li>
+        <li><button onclick='addRemoveAttr();' id="ea">Enter Admin Mode</button></li>
+		
       </ul>
     </nav>
     <!-- ################################################################################################ --> 
